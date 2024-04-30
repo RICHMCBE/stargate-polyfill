@@ -1,0 +1,18 @@
+{
+  "name": "presentkim/stargate-polyfill",
+  "description": "Provides utils for soft-depend to Stargate-Atlantis and StarGateAddon plugin for PocketMine-MP",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "pocketmine/pocketmine-mp": "^5.0.0"
+  },
+  "autoload": {
+    "psr-4": {"kim\\present\\polyfill\\stargate\\": ["src/kim/present/polyfill/stargate/"]}
+  },
+  "extra": {
+    "virion": {
+      "spec": "3.0",
+      "namespace-root": "kim\\present\\polyfill\\stargate"
+    }
+  }
+}
