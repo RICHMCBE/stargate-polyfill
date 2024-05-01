@@ -28,9 +28,8 @@ namespace kim\present\polyfill\stargate;
 
 interface UpdateNotifyModel extends \JsonSerializable{
 
-    public const ID = "example.notify";
+    public function getId() : string;
 
-    public function jsonSerialize() : array;
+    public function handle(self $model) : void;
 
-    public static function handle(self $model) : void;
 }

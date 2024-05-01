@@ -33,7 +33,6 @@ use pocketmine\Server;
 use RoMo\XuidCore\XuidCore;
 
 use function class_exists;
-use function is_a;
 use function is_numeric;
 
 /** This trait override most methods in the {@link PluginBase} abstract class. */
@@ -48,21 +47,17 @@ final class StarGatePolyfill{
     /**
      * 업데이트 알림을 받기 위한 모델을 등록하기 위한 유틸 메소드
      *
-     * @param string $clazz {@link UpdateNotifyModel}을 구현한 클래스 이름
+     * @param UpdateNotifyModel $model
      */
-    public static function registerNotifyModel(string $clazz) : void{
+    public static function registerNotifyModel(UpdateNotifyModel $model) : void{
         if(!self::hasStarGate()){
             return;
         }
 
-        if(!is_a($clazz, UpdateNotifyModel::class, true)){
-            throw new \InvalidArgumentException("$clazz must implement " . UpdateNotifyModel::class);
-        }
-
         StarGateAddon::getInstance()->registerUpdateNotify(
-            $clazz::ID,
-            $clazz,
-            $clazz::handle(...)
+            $model->getId(),
+            $model::class,
+            $model->handle(...)
         );
     }
 
@@ -74,9 +69,9 @@ final class StarGatePolyfill{
      */
     public static function sendNotify(UpdateNotifyModel $model) : void{
         if(self::hasStarGate()){
-            StarGateAddon::notifyUpdate($model::ID, $model);
+            StarGateAddon::notifyUpdate($model->getId(), $model);
         }else{
-            $model::handle($model);
+            $model->handle($model);
         }
     }
 
