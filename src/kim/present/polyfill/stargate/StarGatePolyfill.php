@@ -83,7 +83,7 @@ final class StarGatePolyfill{
      * @return Player|null
      */
     public static function getPlayer(string|int $target) : ?Player{
-        $player = Server::getInstance()->getPlayerExact($target);
+        $player = Server::getInstance()->getPlayerExact((string) $target);
         if($player === null && is_numeric($target) && class_exists(XuidCore::class)){
             $player = XuidCore::getInstance()->getPlayer((int) $target);
         }
