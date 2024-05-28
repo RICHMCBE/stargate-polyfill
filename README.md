@@ -1,5 +1,5 @@
 # 🦋 StarGatePolyfill
-> 스타게이트를 확장해 추가로 API를 제공하는 Virion
+> StarGate-Atlantis 및 StarGateAddon에 대한 약한 의존성을 위한 편의용 VIRION
 
 # Notice
 `StarGateAddon`, `XuidCore`와 함께 사용하면 안정적인 이용이 가능합니다
