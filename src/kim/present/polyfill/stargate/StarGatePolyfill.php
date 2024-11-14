@@ -135,7 +135,7 @@ final class StarGatePolyfill{
     public static function sendToast(string|int $target, string $title, string $body) : void{
         $player = self::getPlayer($target);
         if($player !== null){
-            $player->sendTitle($title, $body);
+            $player->sendToastNotification($title, $body);
             return;
         }
 

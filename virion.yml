@@ -1,7 +1,7 @@
 ---
 name: stargate-polyfill
 antigen: kim\present\polyfill\stargate
-version: 1.0.2
+version: 1.0.3
 api: 5.0.0
 author: PresentKim
 description: "Provides utils for soft-depend to Stargate-Atlantis and StarGateAddon plugin"
